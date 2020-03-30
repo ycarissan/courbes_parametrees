@@ -1,0 +1,11 @@
+config
+*.aux
+*.log
+*.nav
+*.out
+*.pdf
+*.snm
+*.toc
+fonts
+Makefile
+README.md
