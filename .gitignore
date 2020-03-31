@@ -1,4 +1,3 @@
-config
 *.aux
 *.log
 *.nav
@@ -6,4 +5,3 @@ config
 *.pdf
 *.snm
 *.toc
-fonts
