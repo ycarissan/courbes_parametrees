@@ -185,4 +185,54 @@ y=r\sin \theta
 
 \subsection{Tangente en un point}
 \subsubsection{Tangente en un point distinct de l'origine}
+\begin{frame}{Tangente en un point distinct de l'origine}
+        \begin{alertblock}{Proposition}
+                Soit $(\mathcal{C})$ une courbe d'équation polaire $r=f(\theta)$.\\
+                Soit $M$ un point de $(\mathcal{C})$, distinct de l'originie.\\
+                Alors la tangente en $M$ est dirigée par $\vec{OM\;'}(\theta)$.
+        \end{alertblock}
+\end{frame}
+\begin{frame}{Tangente en un point distinct de l'origine}
+        \begin{block}{Preuve}
+                \begin{itemize}
+                                \item<1-> On sait que la tangente est dirigée par le premier
+                                        vecteur dérivé non nul.\\
+                                        \only<1>{\alert{On cherche donc si $\vec{OM\;'}(\theta)\ne 0$}}
+                                \item<2-> \only<2>{On pose $\vec{OM}(\theta) = r(\theta)\vec{u}(\theta)$\\
+                                        Donc }$\vec{OM\;'}(\theta) = r\;'(\theta)\vec{u}(\theta)
+                                        +r(\theta)\vec{u\;'}(\theta)$.
+                                \item<3-> \only<3>{Or $\vec{u}(\theta)=\left|\begin{array}{l}\cos\theta\\\sin\theta\end{array}\right.$
+                                                et $\vec{u\;'}(\theta)=\left|\begin{array}{l}-\sin\theta\\\cos\theta\end{array}\right.$.\\
+                                                        $\vec{u}(\theta).\vec{u\;'}(\theta)=-\cos\theta\sin\theta+\sin\theta\cos\theta=0$\\
+                                      Donc }$\vec{u}(\theta)\perp\vec{u\;'}(\theta)$.\\
+                                      \only<3>{\alert{Donc toute combinaison linéaire de $\vec{u}$ et $\vec{u\;'}$ sera
+                                      non nulle.}}
+                                \item<4-> De plus, comme $M\ne O$ alors $r(\theta)\ne 0$.
+                                \item<5-> On en déduit que $\vec{OM\;'}(\theta)\ne\vec{0}$, donc
+                                        la tangente en $M$ est dirigée par $\vec{OM\;'}(\theta)$.
+
+                \end{itemize}
+        \end{block}
+\end{frame}
+\begin{frame}{}
+        \begin{block}{Remarque}
+                On retiendra que les vecteurs $\vec{u}(\theta)$ et $\vec{u\;'}(\theta)$
+                sont positivement orthogonaux. Cela signifie que~:
+                \begin{enumerate}
+                                \item $\vec{u}(\theta)\perp\vec{u\;'}(\theta)$
+                                \item $\widehat{\left(\vec{u}(\theta);\vec{u\;'}(\theta)\right)}=+\frac{\pi}{2}\;[2\pi]$
+                \end{enumerate}
+                \begin{tikzpicture}[scale=1.2]
+                        \draw[->] (-1,0) -- (2.5,0);
+                        \draw[->] (0,-0.5) -- (0,2.5);
+                        \draw[->] (0,0) -- (1,0) node [below] {$\vec{i}$};
+                        \draw[->] (0,0) -- (0,1) node [left] {$\vec{j}$};
+                        \draw[blue] (-1.0,-0.50) -- (4,2.0);
+                        \draw[->] (1.4,0) arc(0:25:1.4) node [right] {$\theta$};
+                        \draw[->,red,thick] (2,1) -- (3,1.5) node [below] {$\vec{u}$};
+                        \draw[->,red,thick] (2,1) -- (1.5,2) node [left] {$\vec{u\;'}$};
+                        \draw[->,red] (2.5,1.25) arc(25:115:0.5) node [above] {$\;\;+\frac{\pi}{2}$};
+                \end{tikzpicture}
+        \end{block}
+\end{frame}
 \end{document}
