@@ -244,7 +244,22 @@ Il n'y a ni borne infinie, ni valeur interdite, donc pas de branche infinie à �
 On place les tangentes, les points pour lesquels on connaît les valeurs\footnote{ainsi
 que quelques points pour lesquels on peut facilement calculer $x(t)$ et $y(t)$ si possible}.
 On n'oublie pas de faire la symétrie de la courbe par rapport à $(Oy)$.\\
-\includegraphics[width=\textwidth]{images/td4ex1q1.png}
+%\includegraphics[width=\textwidth]{images/td4ex1q1.png}
+\begin{tikzpicture}[scale=.75]
+        \draw [very thin, gray!10] (-10,-1) grid[step=0.2] (12,7);
+        \draw [very thin, gray!25] (-10,-1) grid[step=1.0] (12,7);
+        \foreach \y in { 0,2,...,6} \draw(0,\y)node[left]{\y};
+        \foreach \x in {-8,-6,...,9} \draw(\x,0)node[below]{\x};
+        \draw[->] (-9.5,0) -- (9.5,0) node[right] {$x$};
+        \draw[->] (0,-1) -- (0,6.5) node[above] {$y$};
+        \draw[green, thick] [domain=  0:pi] plot ({3*(\x - sin(\x r))}, {3*(1 - cos(\x r))});
+        \draw[blue,thick] [domain=-pi:0 ] plot ({3*(\x - sin(\x r))}, {3*(1 - cos(\x r))});
+        \draw[<->,red, very thick] (0,-0.5) -- (0,0.5);
+        \draw[<->,red, very thick] ({3*pi+0.5},{6}) -- ({3*pi-0.5},{6});
+        \draw[red] (9,5) node {\parbox{5cm}{Tangente portée par le premier vecteur non nul en $t=\pi$}};
+        \draw[red] (4,1) node {\parbox{5cm}{Tangente portée par le premier vecteur non nul en $t=0$}};
+        \draw[blue] (-6,3) node {\parbox{5cm}{Reproduction de la courbe pour $t\in[-\pi;0]$}};
+\end{tikzpicture}
 
 \solution{}
 \section{Obtention de $(C)$ à partir de $(\Gamma)$}
