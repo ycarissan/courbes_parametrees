@@ -138,32 +138,32 @@ y=r\sin \theta
                 \begin{tabular}{c|l|r}
                         Point & $\theta$ & $r$ \\\hline
                         A & $0$              & $0.500$  \\
-                        B & $\frac{\pi}{8}$  & $0.448$  \\
-                        C & $\frac{2\pi}{8}$ & $0.471$  \\
-                        D & $\frac{3\pi}{8}$ & $0.592$  \\
-                        E & $\frac{4\pi}{8}$ & $1.000$  \\
-                        F & $\frac{5\pi}{8}$ & $6.309$  \\
-                        G & $\frac{6\pi}{8}$ & $-1.414$ \\
-                        H & $\frac{7\pi}{8}$ & $-0.683$ \\
+                        \onslide<2->{B & $\frac{\pi}{8}$  & $0.448$  \\}
+                        \onslide<3->{C & $\frac{2\pi}{8}$ & $0.471$  \\}
+                        \onslide<4->{D & $\frac{3\pi}{8}$ & $0.592$  \\}
+                        \onslide<5->{E & $\frac{4\pi}{8}$ & $1.000$  \\}
+                        \onslide<6->{F & $\frac{5\pi}{8}$ & $6.309$  \\}
+                        \onslide<7->{G & $\frac{6\pi}{8}$ & $-1.414$ \\}
+                        \onslide<8->{H & $\frac{7\pi}{8}$ & $-0.683$   }
                 \end{tabular}
                 \end{minipage}
-                \hfill
+                \hspace{1cm}
                 \begin{minipage}[c]{0.4\textwidth}
                 \begin{tikzpicture}[scale=1.5]
                         \draw[->] (-1,0) -- (2,0);
                         \draw[->] (0,-1.5) -- (0,1.5);
                         \draw ( 0.0: 0.5           ) node {$\bullet$} node [right] {A};
-                        \draw (  22:0.448341529168 ) node {$\bullet$} node [left] {B};
-                        \draw (  45:0.471404520791 ) node {$\bullet$} node [right] {C};
-                        \draw (  67:0.591979951316 ) node {$\bullet$} node [left] {D};
-                        \draw (  90:1.0            ) node {$\bullet$} node [right] {E};
-%                        \draw ( 112:6.3086440598   ) node {$\bullet$} node [right] {F};
-                        \draw ( 135:-1.41421356237 ) node {$\bullet$} node [right] {G};
-                        \draw ( 157:-0.68255861862 ) node {$\bullet$} node [right] {H};
-                        \draw [thick, red] ( -0.2, 1.4) -- ( 1.2, -1.4);
+                        \onslide<2->{\draw (  22.5:0.448341529168 ) node {$\bullet$} node [left] {B};}
+                        \onslide<3->{\draw (  45.0:0.471404520791 ) node {$\bullet$} node [right] {C};}
+                        \onslide<4->{\draw (  67.5:0.591979951316 ) node {$\bullet$} node [left] {D};}
+                        \onslide<5->{\draw (  90.0:1.0            ) node {$\bullet$} node [right] {E};}
+                        %                       \onslide<6->{ \draw ( 112.5:6.3086440598   ) node {$\bullet$} node [right] {F};}
+                        \onslide<7->{\draw ( 135.0:-1.41421356237 ) node {$\bullet$} node [right] {G};}
+                        \onslide<8->{\draw ( 157.5:-0.68255861862 ) node {$\bullet$} node [right] {H};}
+                        \onslide<9->{\draw [thick, red] ( -0.2, 1.4) -- ( 1.2, -1.4);}
                 \end{tikzpicture}
                 \end{minipage}\\
-                Le point F, pour $\theta=\frac{5\pi}{8}$, n'est pas représenté.
+                \onslide<6->{Le point F, pour $\theta=\frac{5\pi}{8}$, n'est pas représenté.}
         \end{exampleblock}
 \end{frame}
 \subsubsection{Cercle de centre l'origine du repère}
@@ -182,6 +182,40 @@ y=r\sin \theta
                 \end{align*}
                 où $\lambda$ et $\mu$ désignent deux constantes réelles.
         \end{alertblock}
+\end{frame}
+\begin{frame}{Cercle passant par l'origine du repère}
+        \begin{exampleblock}{Exemple d'un cercle passant par $O$}
+                Soit le cercle tel que $\lambda=2$ et $\mu=1$.\\
+                \begin{minipage}[c]{0.4\textwidth}
+                \begin{tabular}{c|l|r}
+                        Point & $\theta$ & $r$ \\\hline
+                                     A & $0$              & $ 2.000$   \\
+                        \onslide<2->{B & $\frac{ \pi}{8}$ & $ 2.230$ \\}
+                        \onslide<3->{C & $\frac{2\pi}{8}$ & $ 2.121$ \\}
+                        \onslide<4->{D & $\frac{3\pi}{8}$ & $ 1.689$ \\}
+                        \onslide<5->{E & $\frac{4\pi}{8}$ & $ 1.000$ \\}
+                        \onslide<6->{F & $\frac{5\pi}{8}$ & $ 0.159$ \\}
+                        \onslide<7->{G & $\frac{6\pi}{8}$ & $-0.707$ \\}
+                        \onslide<8->{H & $\frac{7\pi}{8}$ & $-1.465$   }
+                \end{tabular}
+                \end{minipage}
+                \hspace{1cm}
+                \begin{minipage}[c]{0.4\textwidth}
+                \begin{tikzpicture}[scale=1.5]
+                        \draw[->] (-1,0) -- (2,0);
+                        \draw[->] (0,-1.5) -- (0,1.5);
+                                     \draw (   0.0: 2.0           ) node {$\bullet$} node [right] {A};
+                        \onslide<2->{\draw (  22.5:  2.230442497387663) node {$\bullet$} node [left] {B};}
+                        \onslide<3->{\draw (  45.0:  2.121320343559643) node {$\bullet$} node [right] {C};}
+                        \onslide<4->{\draw (  67.5:  1.689246397241466) node {$\bullet$} node [left] {D};}
+                        \onslide<5->{\draw (  90.0:  1.000000000000000) node {$\bullet$} node [right] {E};}
+                        \onslide<6->{\draw ( 112.5:  0.158512667781107) node {$\bullet$} node [right] {F};}
+                        \onslide<7->{\draw ( 135.0: -0.707106781186547) node {$\bullet$} node [right] {G};}
+                        \onslide<8->{\draw ( 157.5: -1.465075632657483) node {$\bullet$} node [right] {H};}
+                        \onslide<9->{\draw [thick, red] (1,0.5) circle(1.118);}
+                \end{tikzpicture}
+                \end{minipage}\\
+        \end{exampleblock}
 \end{frame}
 
 \subsection{Tangente en un point}
