@@ -1,10 +1,12 @@
-radical=courbes_parametrees_en_polaires
+radical=td
+#radical=td
+
 defaut: $(radical).pdf
 #	(cd plot; make)
 
 %.pdf: %.tex
-	xelatex $<
-	xelatex $<
+	pdflatex -shell-escape $<
+	pdflatex -shell-escape $<
 
 #%.ps: %.dvi
 #	dvips -t landscape $< -o

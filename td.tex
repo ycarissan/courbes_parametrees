@@ -436,4 +436,155 @@ Cette courbe est appelée astroïde.
 Elle représente le lieu géométrique d'un point d'un cercle qui roule sans glisser
 à l'intérieur d'un cercle de rayon supérieur.\footnote{\url{https://fr.wikipedia.org/wiki/Astroïde}}
 
+\exo{}
+Étudier la courbe définie par la représentation~:
+\begin{align*}
+\left\{%
+\begin{array}{l}
+        x(t) = \frac{1}{t}+\ln(2+t)\\
+        y(t) = t+\frac{1}{t}
+\end{array}%
+\right.
+\end{align*}
+\solution{}
+\section{Domaines de définition et d'étude}
+\subsection{Domaine de définition}
+À cause du $\frac{1}{t}$, on a $t\ne 0$.
+À cause du $\ln$, on a $t>-2$.
+On en déduit que~:
+\begin{align*}
+        D=\left]-2;0\right[\cup\left]0;\infty\right[
+\end{align*}
+\subsection{Domaine d'étude}
+Les fonctions utilisées n'ont ni période, ni parité, donc~:
+\begin{align*}
+        I=\left]-2;0\right[\cup\left]0;\infty\right[
+\end{align*}
+\section{Tableau de variations sur $I$}
+\begin{align*}
+        x\;'(t) & = -\frac{1}{t^2}+\frac{1}{2+t}\\
+                & = -\frac{-2-t+t^2}{t^2(2+t)}
+\end{align*}
+Le dénominateur est positif car $t^2>0$ et $2+t>0$ car $t\in\left]-2;0\right[\cup\left]0;\infty\right[$.
+donc $x\;'(t)$ a le signe de $t^2-t-2$.
+$t^2-t-2$ a pour racine $2$ et $-1$ (on peut calculer ces racines grâce au $\Delta$ (ici $\Delta=9$) ou
+en cherchant des racines évidentes).
+Le tableau de signe de $t^2-t-2$ est~:\\
+\begin{tikzpicture}
+        \tkzTabInit{$t$ / 1 , signe de $t^2-t-2$ / 1}{$-\infty$, $-1$, $2$, $+\infty$}
+        \tkzTabLine{,+,0,-,0,+,}
+\end{tikzpicture}
+
+\begin{align*}
+        y\;'(t) &= 1-\frac{1}{t^2} \\
+                &= \frac{t^2-1}{t^2}
+\end{align*}
+$y\;'(t)$ a le signe de $t^2-1$.\\
+\begin{tikzpicture}
+        \tkzTabInit{$t$ / 1 , signe de $t^2-1$ / 1}{$-\infty$, $-1$, $+1$, $+\infty$}
+        \tkzTabLine{,+,0,-,0,+,}
+\end{tikzpicture}
+\begin{align*}
+        \lim_{t\to -2} x(t)              & = -\infty &
+        \lim_{\substack{t\to 0\\<}} x(t) & = -\infty &
+        \lim_{\substack{t\to 0\\>}} x(t) & = +\infty &
+        \lim_{{t\to +\infty}}       x(t) & = +\infty \\
+        x(-1)                            & = -1      &
+        x(1)                             & = 1+\ln 3 &
+        x(2)                             & = \frac{1}{2} + \ln 4 &
+        x\;'(1)                          & = -\frac{2}{3} \\
+        \lim_{t\to -2} y(t)              & = -\frac{5}{2} &
+        \lim_{\substack{t\to 0\\<}} y(t) & = -\infty &
+        \lim_{\substack{t\to 0\\>}} y(t) & = +\infty &
+        \lim_{{t\to +\infty}}       y(t) & = +\infty \\
+        y(-1)                            & = -2      &
+        y(1)                             & = 2       &
+        y(2)                             & = \frac{5}{2} &
+        y\;'(2)                          & = \frac{3}{4} \\
+\end{align*}
+D'où le tableau de variations~:\\
+\begin{tikzpicture}
+        \tkzTabInit{$t$ / 1 , $x\;'(t)$ / 1, $x(t)$ / 2, $y\;'(t)$ / 1, $y(t)$ / 2}{$-2$, $-1$, $0$, $+1$, $+2$, $+\infty$}
+        \tkzTabLine{d , + , 0 , - , d , - , -\frac{2}{3}, -, 0, +, }
+        \tkzTabVar{-D- / / $-\infty$ , +/ -1, -D+ / $-\infty$ / $+\infty$, R/, -/ $\frac{1}{2}+\ln 4$, +/ $+\infty$}
+        \tkzTabIma{3}{5}{4}{$1+\ln 3$}
+        \tkzTabLine{d , + , 0 , - , d , - , 0, +, \frac{3}{4} , +, }
+        \tkzTabVar{-D- / / $-\frac{5}{2}$ , +/ -2, -D+ / $-\infty$ / $+\infty$, -/ 2, R/, +/ $+\infty$}
+        \tkzTabIma{4}{6}{5}{$\frac{5}{2}$}
+\end{tikzpicture}
+\section{Tangentes}
+Pour $t=-1$, on a le point $A\left|\begin{array}{c}-1\\-2\end{array}\right.$.
+        Or $F\;'(-1) = \left|\begin{array}{c}0\\0\end{array}\right.$ et
+                $F\;"(-1) = \left|\begin{array}{c}-3\\-2\end{array}\right.$.
+                        $F\;"(-1)$ est donc le premier vecteur dérivé non nul en $-1$, il dirige
+                        donc la tangente en $A$.\\
+Pour $t=1$, on a le point $B\left|\begin{array}{c}1+\ln 3\\2\end{array}\right.$.
+        $F\;'(1) = \left|\begin{array}{c}-\frac{2}{3}\\0\end{array}\right.$
+                        $F\;'(1)$ est donc le premier vecteur dérivé non nul en $1$, il dirige
+                        donc la tangente en $B$.\\
+Pour $t=2$, on a le point $C\left|\begin{array}{c}\frac{1}{2}+\ln 4\\\frac{5}{2}\end{array}\right.$.
+        $F\;'(2) = \left|\begin{array}{c}0\\\frac{3}{4}\end{array}\right.$
+                $F\;'(2)$ est donc le premier vecteur dérivé non nul en $2$, il dirige
+                        donc la tangente en $C$.\\
+\section{Branches infinies}
+\begin{itemize}
+\item Pour $t=-2$, on a~:
+\begin{align*}
+        \lim_{t\to -2} x(t)              & = -\infty &
+        \lim_{t\to -2} y(t)              & = -\frac{5}{2}
+\end{align*}
+Donc la droite $y=-\frac{5}{2}$ est asymptote à la courbe au voisinage de $t=-2$.
+\item Pour $t=0$, on a~:
+\begin{align*}
+        \lim_{\substack{t\to 0\\<}} x(t) & = -\infty &
+        \lim_{\substack{t\to 0\\>}} x(t) & = +\infty \\
+        \lim_{\substack{t\to 0\\<}} y(t) & = -\infty &
+        \lim_{\substack{t\to 0\\>}} y(t) & = +\infty
+\end{align*}
+                On doit donc étudier $\lim_{t\to 0}\frac{y(t)}{x(t)}$.
+\begin{align*}
+        \frac{y(t)}{x(t)} &= \frac{t+\frac{1}{t}}{\frac{1}{t}+\ln(2+t)}\\
+                          &= \frac{\frac{t^2+1}{t}}{\frac{1+t\ln(2+t)}{t}} \\
+                          &= \frac{t^2+1}{1+t\ln(2+t)}
+\end{align*}
+Donc $\lim_{t\to 0}\frac{y(t)}{x(t)}=1$.
+                Comme $\lim_{t\to 0}\frac{y(t)}{x(t)}=1$, on doit étudier
+                $\lim_{t\to 0}[y(t)-1\times x(t)]$ (Cas n$^o$3 du cours).
+\begin{align*}
+        y(t)-x(t) & = (t+\frac{1}{t})-(\frac{1}{t}+\ln(2+t))\\
+                  & = t-\ln(2+t)
+\end{align*}
+                Donc $\lim_{t\to 0}[y(t)-1\times x(t)]=-\ln 2$.
+                On en déduit que $y=x-\ln 2$ est asymptote au voisinage de $t=0$.
+\item Pour $t=+\infty$, on a~:
+\begin{align*}
+        \lim_{{t\to +\infty}}       x(t) & = +\infty &
+        \lim_{{t\to +\infty}}       y(t) & = +\infty 
+\end{align*}
+On doit étudier $\lim_{t\to +\infty}\frac{y(t)}{x(t)}$.
+On factorise le numérateur et le dénominateur par leur terme le plus fort en $t$:
+\begin{align*}
+        \frac{y(t)}{x(t)} &= \frac{t^2(1+\frac{1}{t^2}}{t\ln(2+t)\left[\frac{1}{t\ln(2+t)}+1\right]} \\
+                          &= \frac{t}{\ln(2+t)}\left[\frac{1+\frac{1}{t^2}}{\frac{1}{t\ln(2+t)}+1}\right]
+\end{align*}
+On voit que le terme entre crochets tend vers 1 lorsque $t\to +\infty$.
+Pour le premier terme, il faut faire apparaître au numérateur et au dénominateur
+                le même terme en $t+2$ pour utiliser le théorème des croissances composées.\\
+                \textbf{Rappel:} théorème des croissances composées~:\\
+\begin{align*}
+        \lim_{t\to +\infty}\frac{t^\alpha}{\left(\ln t\right)^\beta}&=+\infty & \alpha>0\;\beta>0 & &  & & & & 
+\end{align*}
+Donc on réécrit la limite de la façon suivante~:
+\begin{align*}
+        \frac{y(t)}{x(t)} &= \left(\frac{t+2}{\ln(2+t)}\right)
+                             \left(\frac{t}{t+2}\right)
+                             \left[\frac{1+\frac{1}{t^2}}{\frac{1}{t\ln(2+t)}+1}\right]
+\end{align*}
+Le premier terme tend vers $+\infty$ selon le théorème des croissances composées, le second
+tend vers $1$ et le troisième vers $1$.
+On en déduit que la limite tend vers $+\infty$.
+                Donc, la courbe admet au voisinage de $t=+\infty$ une branche parabolique d'axe $(Oy)$.
+\end{itemize}
+
+\includegraphics[width=\textwidth]{images/exercice3.png}
 \end{document}
