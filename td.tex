@@ -601,4 +601,108 @@ On positionne d'abord la droite d'angle $\theta$, on détermine
 le vecteur unitaire qui porte cette droite, puis on positionne
 le point, $M$, tel que: $\vec{OM}=r\times \vec{u}$.\\
 \includegraphics[width=\textwidth]{images/exo4.png}
+\exo{}
+\solution{}
+Voir cours
+\exo{}
+Étudier la courbe définie par la représentation~:
+\begin{align*}
+        r(\theta) & = \cos^2 \theta
+\end{align*}
+\solution{}
+\section{Domaines de définition et d'étude}
+\subsection{Domaine de définition}
+Comme $\cos^2 \theta$ est définit sur $\mathbb{R}$, $D_r=\mathbb{R}$.
+\subsection{Intervalle d'étude}
+\subsubsection{Période}
+On suppose que $r(\theta+T)=r(\theta)$.
+On étudie alors la courbe sur un intervalle d'amplitude $T$.
+Soit $(r)$ la courbe ainsi obtenue.\\
+On fait une rotation de $(r)$, d'angle $T$ et de centre $O$,
+puis d'angle $2T$, $3T$, etc.\\
+Remarque: Il y a des cas où il peut y avoir une infinité de rotations.
+Dans les exercices de TD, on tombe sur un multiple de $2\pi$
+et les rotations s'arrêtent.
+\subsubsection{Parité}
+\paragraph{Cas n$^o$1: $r(-\theta)=r(\theta)$}
+On étudie la courbe sur la partie positive de l'ensemble de définition, puis on fait une symétrie
+par rapport à $(Ox)$ pour obtenir la courbe sur la partie négative de l'ensemble de définition.
+\paragraph{Cas n$^o$1: $r(-\theta)=-r(\theta)$}
+On étudie la courbe sur la partie positive de l'ensemble de définition, puis on fait une symétrie
+par rapport à $(Oy)$ pour obtenir la courbe sur la partie négative de l'ensemble de définition.
+\subsubsection{Recherche de période et de parité}
+Comme $\cos^2 \theta$ est définit sur $\mathbb{R}$, $D_r=\mathbb{R}$.
+\paragraph{Période}
+\begin{align*}
+        r(\theta+2\pi) &= \cos^2(\theta+2\pi)\\
+                       &= \cos^2(\theta)     \\
+                       &= r(\theta)
+\end{align*}
+Donc on étudie la courbe sur un intervalle d'amplitude $2\pi$.
+Comme on souhaite étudier la parité, on prend un intervalle symétrique par rapport à $0$.
+On choisit donc $I=\left[-\pi;\pi\right]$
+\paragraph{Parité}
+\begin{align*}
+        r(-\theta) &= \cos^2(-\theta)\\
+                       &= \cos^2(\theta)     \\
+                       &= r(\theta)
+\end{align*}
+On étudie donc la courbe sur $I=\left[0;\pi\right]$.
+On fera le symétrique de la courbe par rapport à $(Ox)$.
+\subsection{Tableau de variations}
+\begin{align*}
+        r\; '(\theta) & = -2\sin(\theta)\cos(\theta)
+\end{align*}
+Comme $\theta\in\left[0;\pi\right]$, $\sin \theta>0$.
+Donc le signe de $r\; '(\theta)$ est celui de $-\cos(\theta)$.
+\begin{itemize}
+        \item Si $\theta\in\left[0;\frac{\pi}{2}\right]$, $\cos \theta\ge 0$
+        \item Si $\theta\in\left[\frac{\pi}{2};\pi\right]$, $\cos \theta\le 0$
+\end{itemize}
+\begin{align*}
+        r(0)     & = \cos^2(0) = 1 &
+        r\; '(0) & = -2\sin(0)\cos(0) = 0 \\
+        r(\frac{\pi}{2})     & = \cos^2(\frac{\pi}{2}) = 0 &
+        r\; '(\frac{\pi}{2}) & = -2\sin(\frac{\pi}{2})\cos(\frac{\pi}{2}) = 0 \\
+        r(\pi)     & = \cos^2(\pi) = 1 &
+        r\; '(\pi) & = -2\sin(\pi)\cos(\pi) = 0 \\
+\end{align*}
+On obtient donc le tableau suivant~:\\
+\begin{tikzpicture}
+        \tkzTabInit{$\theta$ / 1 , $r\;'(\theta)$ / 1, $r(\theta)$ / 2}{$0$, $\frac{\pi}{2}$, $\pi$}
+        \tkzTabLine{0 , - , 0 , + , 0 }
+        \tkzTabVar{+/ 1, -/ 0 , +/ 1}
+\end{tikzpicture}
+\subsection{Tangentes}
+En tout point, c'est le vecteur $\vec{OM}\; '(\theta)$ qui dirige la tangente (voir cours).
+On calcule donc le vecteur $\vec{OM}\;'(\theta)$ et on évalue combien il vaut chacun des points
+particuliers de la courbe~:
+\begin{align*}
+        \vec{OM}(\theta) & = r(\theta)\vec{u}(\theta) \\
+\end{align*}
+Donc~:
+\begin{align*}
+        \vec{OM}\;'(\theta) & = r\;'(\theta)\vec{u}(\theta) + r(\theta)\vec{u}\; '(\theta)\\
+\end{align*}
+\begin{itemize}
+        \item Pour $\theta=0$, on a le point $A(\theta=0; r=1)$.
+                En $A$, $\theta=0$, la tangente est portée par le vecteur~:
+                \begin{align*}
+                        \vec{OM}\;'(0) & = r\;'(0)\vec{u}(0) + r(0)\vec{u}\; '(0)\\
+                                       & = \vec{u}\; '(0)
+                \end{align*}
+        \item Pour $\theta=\frac{\pi}{2}$, on a le point $O$.
+                Donc la tangente en $O$ est la droite d'équation polaire $\theta=\frac{\pi}{2}$.
+        \item Pour $\theta=\pi$, on a le point $B(\theta=\pi; r=1)$.
+                En $B$, $\theta=\pi$, la tangente est portée par le vecteur~:
+                \begin{align*}
+                        \vec{OM}\;'(\pi) & = r\;'(\pi)\vec{u}(\pi) + r(\pi)\vec{u}\; '(\pi)\\
+                                         & = \vec{u}\; '(\pi)
+                \end{align*}
+\end{itemize}
+\subsection{Branches infinies}
+L'intervalle d'étude n'a pas de borne infinie.\\
+Il n'y a pas de valeur interdite, donc il n'y a pas de branches infinies.
+\subsection{Courbe}
+\includegraphics[width=\textwidth]{images/exo6.png}
 \end{document}
